@@ -12,7 +12,7 @@ from translator import Translator
 import chat
 import broadcast
 
-# from record import record_conference_audio
+# from record import record_audio
 import sounddevice as sd
 import soundfile as sf
 
@@ -52,7 +52,7 @@ def process_audio(filename):
     except Exception as e:
         print(f"❌ 处理音频时发生错误: {e}")
 
-def record_conference_audio():
+def record_audio():
     """在新线程中运行录音"""
     def recording_thread():
         try:
@@ -102,7 +102,7 @@ class Api:
     def record(self, content):
         """从 GUI 触发录音"""
         stop_recording.clear()
-        record_conference_audio()
+        record_audio()
 
 
 def get_entrypoint():
